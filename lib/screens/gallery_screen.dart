@@ -3,13 +3,13 @@ import '../models/activity.dart';
 import '../widgets/activity_item.dart';
 
 class GalleryScreen extends StatelessWidget {
-  final List<Activity> favoriteMeals;
+  final List<Activity> favoriteActivities;
 
-  GalleryScreen(this.favoriteMeals);
+  GalleryScreen(this.favoriteActivities);
 
   @override
   Widget build(BuildContext context) {
-    if (favoriteMeals.isEmpty) {
+    if (favoriteActivities.isEmpty) {
       return Center(
         child: Text(
           'You have no photos yet - start adding some!',
@@ -20,15 +20,15 @@ class GalleryScreen extends StatelessWidget {
       return ListView.builder(
         itemBuilder: (ctx, index) {
           return ActivityItem(
-            id: favoriteMeals[index].id,
-            title: favoriteMeals[index].title,
-            imageUrl: favoriteMeals[index].imageUrl,
-            complexity: favoriteMeals[index].urgency,
-            duration: favoriteMeals[index].duration,
-            score: favoriteMeals[index].score,
+            id: favoriteActivities[index].id,
+            title: favoriteActivities[index].title,
+            imageUrl: favoriteActivities[index].imageUrl,
+            complexity: favoriteActivities[index].urgency,
+            duration: favoriteActivities[index].duration,
+            score: favoriteActivities[index].score,
           );
         },
-        itemCount: favoriteMeals.length,
+        itemCount: favoriteActivities.length,
       );
     }
   }
