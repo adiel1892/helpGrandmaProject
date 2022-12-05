@@ -5,9 +5,9 @@ import 'package:meals_project/widgets/main_drawer.dart';
 import '../models/activity.dart';
 
 class TabsScreen extends StatefulWidget {
-  final List<Activity> favoriteMeals;
+  final List<Activity> favoriteActivities;
 
-  TabsScreen(this.favoriteMeals);
+  TabsScreen(this.favoriteActivities);
 
   @override
   State<TabsScreen> createState() => _TabsScreenState();
@@ -23,7 +23,7 @@ class _TabsScreenState extends State<TabsScreen> {
     _pages = [
       {'page': CategoriesScreen(), 'title': 'Home'},
       {
-        'page': GalleryScreen(widget.favoriteMeals),
+        'page': GalleryScreen(widget.favoriteActivities),
         'title': 'Your Gallery',
       },
     ];
