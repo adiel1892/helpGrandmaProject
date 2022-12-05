@@ -10,8 +10,11 @@ class GalleryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (favoriteMeals.isEmpty) {
-      return const Center(
-        child: Text('You have no photos yet - start adding some!'),
+      return Center(
+        child: Text(
+          'You have no photos yet - start adding some!',
+          style: Theme.of(context).textTheme.titleMedium,
+        ),
       );
     } else {
       return ListView.builder(
