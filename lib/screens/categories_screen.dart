@@ -1,11 +1,31 @@
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:meals_project/widgets/upload_photo.dart';
 import '../dummy_data.dart';
 import 'package:flutter/material.dart';
 import '../widgets/category_item.dart';
 
 class CategoriesScreen extends StatelessWidget {
   const CategoriesScreen({super.key});
+
+  Widget buildListTile(
+      String title, IconData iconData, VoidCallback tapHandler) {
+    return ListTile(
+      leading: Icon(
+        iconData,
+        size: 26,
+      ),
+      title: Text(
+        title,
+        style: const TextStyle(
+          fontFamily: 'RobotoCondensed',
+          fontSize: 24,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+      onTap: tapHandler,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -24,14 +44,17 @@ class CategoriesScreen extends StatelessWidget {
             .toList(),
       ),
       // a button to add a photo
-      floatingActionButton: FloatingActionButton(
-        child: const Icon(
-          Icons.add_a_photo,
-        ),
-        onPressed: () {
-          print("HERE");
-        },
-      ),
+      // floatingActionButton: FloatingActionButton(
+      //   child: const Icon(
+      //     Icons.add,
+      //   ),
+      //   onPressed: () {
+      //     buildListTile('Upload Photo', Icons.score, () {
+      //       Navigator.of(context).pushReplacementNamed(UploadPhoto.routeName);
+      //     });
+      //     print("HERE");
+      //   },
+      // ),
     );
   }
 }

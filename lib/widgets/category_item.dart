@@ -13,16 +13,8 @@ class CategoryItem extends StatelessWidget {
         .pushNamed(CategoryActivitiessScreen.routeName, arguments: {
       'id': id,
       'title': title,
-    }
-
-            // MaterialPageRoute(
-            //   builder: (_) {
-            //     return CategoryMealsScreen(id, title);
-            //   },
-            // ),
-            );
+    });
   }
-  // const CategoryItem({super.key});
 
   @override
   Widget build(BuildContext context) {

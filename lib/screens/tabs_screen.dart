@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:meals_project/screens/categories_screen.dart';
 import 'package:meals_project/screens/gallery_screen.dart';
 import 'package:meals_project/widgets/main_drawer.dart';
+import 'package:meals_project/widgets/upload_photo.dart';
 import '../models/activity.dart';
 
 class TabsScreen extends StatefulWidget {
@@ -26,6 +27,7 @@ class _TabsScreenState extends State<TabsScreen> {
         'page': GalleryScreen(widget.favoriteActivities),
         'title': 'Your Gallery',
       },
+      // {'page': UploadPhoto(), 'title': 'Upload Photo'},
     ];
     super.initState();
   }
@@ -59,6 +61,10 @@ class _TabsScreenState extends State<TabsScreen> {
             icon: Icon(Icons.camera),
             label: 'Gallery',
           ),
+          // BottomNavigationBarItem(
+          //   icon: Icon(Icons.add),
+          //   label: 'Upload Photo',
+          // ),
         ],
       ),
     );

@@ -5,6 +5,7 @@ import 'package:meals_project/screens/category_activities_screen.dart';
 import 'package:meals_project/screens/table_score.dart';
 import 'package:meals_project/screens/activity_detail_screen.dart';
 import 'package:meals_project/screens/tabs_screen.dart';
+import 'package:meals_project/widgets/upload_photo.dart';
 
 import 'models/activity.dart';
 
@@ -46,6 +47,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Grandma Project',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
           primarySwatch: Colors.pink,
           accentColor: Colors.amber,
@@ -72,6 +74,7 @@ class _MyAppState extends State<MyApp> {
         ActivityDetailScreen.routeName: (ctx) =>
             ActivityDetailScreen(_toggleFavorite, _isMealFavorite),
         TableScore.routeName: (ctx) => TableScore(),
+        UploadPhoto.routeName: (ctx) => UploadPhoto(),
       },
 
       // onGenerateRoute: (settings) {

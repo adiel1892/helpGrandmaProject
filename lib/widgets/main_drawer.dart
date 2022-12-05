@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meals_project/screens/table_score.dart';
+import 'package:meals_project/widgets/upload_photo.dart';
 
 class mainDrawer extends StatelessWidget {
   Widget buildListTile(
@@ -51,6 +52,10 @@ class mainDrawer extends StatelessWidget {
         buildListTile('Score Table', Icons.score, () {
           Navigator.of(context).pushReplacementNamed(TableScore.routeName);
         }),
+        // maybe
+        buildListTile('Upload Photo', Icons.score, () {
+          Navigator.of(context).pushReplacementNamed(UploadPhoto.routeName);
+        })
       ],
     ));
   }
