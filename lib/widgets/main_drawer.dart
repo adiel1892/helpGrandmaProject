@@ -53,9 +53,18 @@ class mainDrawer extends StatelessWidget {
           Navigator.of(context).pushReplacementNamed(TableScore.routeName);
         }),
         // maybe
-        buildListTile('Upload Photo', Icons.score, () {
+        buildListTile('Upload Photo', Icons.add_a_photo, () {
           Navigator.of(context).pushReplacementNamed(UploadPhoto.routeName);
-        })
+        }),
+        buildListTile('My Groups', Icons.group, () {
+          // Navigator.of(context).pushReplacementNamed(UploadPhoto.routeName);
+        }),
+        buildListTile('Settings', Icons.settings, () {
+          // Navigator.of(context).pushReplacementNamed(UploadPhoto.routeName);
+        }),
+        buildListTile('Log Out', Icons.logout, () {
+          // Navigator.of(context).pushReplacementNamed(UploadPhoto.routeName);
+        }),
       ],
     ));
   }
