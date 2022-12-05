@@ -37,12 +37,12 @@ class ActivityDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final mealId = ModalRoute.of(context)!.settings.arguments as String;
-    final selectedMeal =
-        DUMMY_ACTIVITIES.firstWhere((meal) => meal.id == mealId);
+    final activityId = ModalRoute.of(context)!.settings.arguments as String;
+    final selectedActivity =
+        DUMMY_ACTIVITIES.firstWhere((meal) => meal.id == activityId);
     return Scaffold(
       appBar: AppBar(
-        title: Text('${selectedMeal.title}'),
+        title: Text('${selectedActivity.title}'),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -51,7 +51,7 @@ class ActivityDetailScreen extends StatelessWidget {
               height: 300,
               width: double.infinity,
               child: Image.network(
-                selectedMeal.imageUrl,
+                selectedActivity.imageUrl,
                 fit: BoxFit.cover,
               ),
             ),
@@ -63,9 +63,9 @@ class ActivityDetailScreen extends StatelessWidget {
                   child: Padding(
                       padding: const EdgeInsets.symmetric(
                           vertical: 5, horizontal: 10),
-                      child: Text(selectedMeal.requierd[index])),
+                      child: Text(selectedActivity.requierd[index])),
                 ),
-                itemCount: selectedMeal.requierd.length,
+                itemCount: selectedActivity.requierd.length,
               ),
             ),
             buildSectionTitle(context, 'Importance of the Activity'),
@@ -78,13 +78,13 @@ class ActivityDetailScreen extends StatelessWidget {
                         child: Text('# ${(index + 1)}'),
                       ),
                       title: Text(
-                        selectedMeal.importance[index],
+                        selectedActivity.importance[index],
                       ),
                     ),
                     Divider(),
                   ],
                 ),
-                itemCount: selectedMeal.importance.length,
+                itemCount: selectedActivity.importance.length,
               ),
             )
           ],
@@ -92,9 +92,9 @@ class ActivityDetailScreen extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(
-          isFavorite(mealId) ? Icons.star : Icons.star_border,
+          isFavorite(activityId) ? Icons.star : Icons.star_border,
         ),
-        onPressed: () => toggleFavorite(mealId),
+        onPressed: () => toggleFavorite(activityId),
       ),
     );
   }

@@ -61,14 +61,6 @@ class _TabsScreenState extends State<TabsScreen> {
           ),
         ],
       ),
-      // a button to add a photo
-
-      floatingActionButton: FloatingActionButton(
-        child: const Icon(
-          Icons.add_a_photo,
-        ),
-        onPressed: () {},
-      ),
     );
   }
 }

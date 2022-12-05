@@ -9,7 +9,8 @@ class CategoriesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GridView(
+    return Scaffold(
+      body: GridView(
         padding: const EdgeInsets.all(25),
         gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
           maxCrossAxisExtent: 200,
@@ -20,6 +21,17 @@ class CategoriesScreen extends StatelessWidget {
         children: DUMMY_CATEGORIES
             .map((catData) =>
                 CategoryItem(catData.id, catData.title, catData.color))
-            .toList());
+            .toList(),
+      ),
+      // a button to add a photo
+      floatingActionButton: FloatingActionButton(
+        child: const Icon(
+          Icons.add_a_photo,
+        ),
+        onPressed: () {
+          print("HERE");
+        },
+      ),
+    );
   }
 }

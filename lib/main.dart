@@ -23,17 +23,17 @@ class _MyAppState extends State<MyApp> {
   List<Activity> _availableActivities = DUMMY_ACTIVITIES;
   List<Activity> _favoriteActivities = [];
 
-  void _toggleFavorite(String mealId) {
+  void _toggleFavorite(String activityId) {
     final existingIndex =
-        _favoriteActivities.indexWhere((activity) => activity.id == mealId);
+        _favoriteActivities.indexWhere((activity) => activity.id == activityId);
     if (existingIndex >= 0) {
       setState(() {
         _favoriteActivities.removeAt(existingIndex);
       });
     } else {
       setState(() {
-        _favoriteActivities.add(
-            DUMMY_ACTIVITIES.firstWhere((activity) => activity.id == mealId));
+        _favoriteActivities.add(DUMMY_ACTIVITIES
+            .firstWhere((activity) => activity.id == activityId));
       });
     }
   }
@@ -45,7 +45,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'DeliMeals',
+      title: 'Grandma Project',
       theme: ThemeData(
           primarySwatch: Colors.pink,
           accentColor: Colors.amber,
