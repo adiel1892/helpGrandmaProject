@@ -31,8 +31,8 @@ class _CategoryActivitiessScreen extends State<CategoryActivitiessScreen> {
           ModalRoute.of(context)?.settings.arguments as Map<String, String>;
       categoryTitle = routeArgs['title']!;
       final categoryId = routeArgs['id'];
-      displayedActivities = widget.availableActivities.where((meal) {
-        return meal.categories.contains(categoryId);
+      displayedActivities = widget.availableActivities.where((activity) {
+        return activity.categories.contains(categoryId);
       }).toList();
       _loadedInitData = true;
     }

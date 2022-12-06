@@ -24,7 +24,10 @@ class _HomeScreenState extends State<HomeScreen> {
         body: Column(
           children: [
             // to make space
-            const SizedBox(
+            // const SizedBox(
+            //   height: 50,
+            // ),
+            const Divider(
               height: 50,
             ),
             Center(
@@ -49,13 +52,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
             ),
-            // to make space
-            const SizedBox(
+            const Divider(
               height: 50,
             ),
             Center(
               child: Container(
-                height: 300,
+                height: 200,
                 width: 300,
                 padding: const EdgeInsets.all(20),
                 alignment: Alignment.center,
@@ -68,6 +70,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       color: Colors.black),
                 ),
               ),
+            ),
+            const Divider(
+              height: 50,
             ),
           ],
         ));

@@ -39,7 +39,7 @@ class ActivityDetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final activityId = ModalRoute.of(context)!.settings.arguments as String;
     final selectedActivity =
-        DUMMY_ACTIVITIES.firstWhere((meal) => meal.id == activityId);
+        DUMMY_ACTIVITIES.firstWhere((activity) => activity.id == activityId);
     return Scaffold(
       appBar: AppBar(
         title: Text('${selectedActivity.title}'),
@@ -90,12 +90,12 @@ class ActivityDetailScreen extends StatelessWidget {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(
-          isFavorite(activityId) ? Icons.star : Icons.star_border,
-        ),
-        onPressed: () => toggleFavorite(activityId),
-      ),
+      // floatingActionButton: FloatingActionButton(
+      //   child: Icon(
+      //     isFavorite(activityId) ? Icons.star : Icons.star_border,
+      //   ),
+      //   onPressed: () => toggleFavorite(activityId),
+      // ),
     );
   }
 }
