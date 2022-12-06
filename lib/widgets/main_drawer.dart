@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:meals_project/screens/home_screen.dart';
+import 'package:meals_project/screens/ideas_screen.dart';
 import 'package:meals_project/screens/table_score.dart';
 import 'package:meals_project/widgets/upload_photo.dart';
 
-class mainDrawer extends StatelessWidget {
+class MainDrawer extends StatelessWidget {
   Widget buildListTile(
       String title, IconData iconData, VoidCallback tapHandler) {
     return ListTile(
@@ -22,7 +24,7 @@ class mainDrawer extends StatelessWidget {
     );
   }
 
-  const mainDrawer({super.key});
+  const MainDrawer({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -46,8 +48,11 @@ class mainDrawer extends StatelessWidget {
         const SizedBox(
           height: 20,
         ),
-        buildListTile('Ideas', Icons.light, () {
+        buildListTile('Home', Icons.house, () {
           Navigator.of(context).pushReplacementNamed('/');
+        }),
+        buildListTile('Ideas', Icons.light, () {
+          Navigator.of(context).pushReplacementNamed(IdeasScreen.routeName);
         }),
         buildListTile('Score Table', Icons.score, () {
           Navigator.of(context).pushReplacementNamed(TableScore.routeName);

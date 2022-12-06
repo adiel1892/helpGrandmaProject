@@ -16,7 +16,7 @@ class _FiltersScreenState extends State<TableScore> {
       appBar: AppBar(
         title: const Text('The Score Table'),
       ),
-      drawer: const mainDrawer(),
+      drawer: const MainDrawer(),
       body: Center(
         child: Text(
           'The score table will be here.',

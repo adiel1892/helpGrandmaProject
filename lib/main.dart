@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:meals_project/dummy_data.dart';
-import 'package:meals_project/screens/categories_screen.dart';
+import 'package:meals_project/screens/ideas_screen.dart';
 import 'package:meals_project/screens/category_activities_screen.dart';
+import 'package:meals_project/screens/home_screen.dart';
+import 'package:meals_project/screens/pictures_screen.dart';
 import 'package:meals_project/screens/table_score.dart';
 import 'package:meals_project/screens/activity_detail_screen.dart';
 import 'package:meals_project/screens/tabs_screen.dart';
@@ -68,13 +70,16 @@ class _MyAppState extends State<MyApp> {
       // home: const CategoriesScreen(),
       initialRoute: '/', // default is home - '/'
       routes: {
-        '/': (ctx) => TabsScreen(_favoriteActivities),
+        '/': (ctx) => HomeScreen(),
+        //  TabsScreen(_favoriteActivities),
         CategoryActivitiessScreen.routeName: (ctx) =>
             CategoryActivitiessScreen(_availableActivities),
         ActivityDetailScreen.routeName: (ctx) =>
             ActivityDetailScreen(_toggleFavorite, _isMealFavorite),
         TableScore.routeName: (ctx) => TableScore(),
         UploadPhoto.routeName: (ctx) => UploadPhoto(),
+        IdeasScreen.routeName: (ctx) => IdeasScreen(),
+        PicturesScreen.routeName: (ctx) => PicturesScreen(),
       },
 
       // onGenerateRoute: (settings) {

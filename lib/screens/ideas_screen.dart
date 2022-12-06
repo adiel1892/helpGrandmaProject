@@ -4,9 +4,11 @@ import 'package:meals_project/widgets/upload_photo.dart';
 import '../dummy_data.dart';
 import 'package:flutter/material.dart';
 import '../widgets/category_item.dart';
+import '../widgets/main_drawer.dart';
 
-class CategoriesScreen extends StatelessWidget {
-  const CategoriesScreen({super.key});
+class IdeasScreen extends StatelessWidget {
+  static const routeName = './ideas-screen';
+  const IdeasScreen({super.key});
 
   Widget buildListTile(
       String title, IconData iconData, VoidCallback tapHandler) {
@@ -30,6 +32,13 @@ class CategoriesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'Ideas',
+          style: Theme.of(context).textTheme.titleMedium,
+        ),
+      ),
+      drawer: const MainDrawer(),
       body: GridView(
         padding: const EdgeInsets.all(25),
         gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
